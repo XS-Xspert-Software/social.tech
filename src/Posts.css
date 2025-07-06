@@ -1,0 +1,114 @@
+body{font-family:'Whitney','Helvetica Neue',Helvetica,Arial,sans-serif}
+
+.verified-badge{color:#1da1f2;margin-left:15px;font-size:14px;vertical-align:middle}
+
+.thumbs-down-icon,.round.comments{vertical-align:middle;margin-right:6px;transform:scaleX(-1)}
+
+.full-screen-post-modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;justify-content:center;z-index:16;margin-top:40px;overflow-y:auto}
+
+.full-screen-post-content{background:#000;width:90%;border-radius:10px;padding:20px;position:relative;overflow-y:auto}
+
+.close-full-screen-btn{position:absolute;top:12px;right:12px;background:#222;color:#fff;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;will-change:background-color}
+.close-full-screen-btn:hover{background: #dd1010;}
+
+.sort-button {padding: 5px 15px; margin-top: 56px; margin-left: 30px; border: 1.5px solid white; border-radius: 30px; background: #5555550c; color: #fff; cursor: pointer; transition: all 0.25s ease-in-out;}
+.sort-button:hover {background: #00e6d8; color: #000; border-color: #00e6d8;}
+#sort-options { gap: 18px;}
+
+@media (min-width: 1025px) {
+  .sort-sidebar {
+    position: fixed;
+    top: 80px;                /* adjust based on height of nav top icons */
+    left: 0;                  /* align with nav */
+    width: 120px;              /* match nav width */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 18;             /* under nav, but above main content */
+  }
+  .sort-button {
+    width: 100%;
+    margin-right: 5px;
+    border: none;
+    border-bottom: 2px solid white;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .sort-button:hover {
+    background-color: #00e6d8;
+    color: #000;
+    border-color: #00e6d8;
+  }
+  main {
+    margin-left: 130px; /* same width as nav and sort-sidebar */
+    margin-top: 40px;
+  }
+}
+.posts-feed {
+  column-count: 3;
+  column-gap: 1.5rem; /* add some gap between columns */
+}
+.post-card {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* or center */
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* New styles for actions */
+.actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px; /* space between buttons */
+  break-inside: avoid; /* prevent actions from breaking across columns */
+  margin-top: 8px; /* some spacing above */
+  justify-content: flex-start; /* align buttons left */
+  align-items: center;
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .posts-feed {
+    column-count: 2;
+  }
+
+}
+@media (max-width: 768px) {
+  .posts-feed {
+    column-count: 1;
+  }
+  .actions {
+    flex-wrap: wrap; /* allow wrapping on small screens */
+    justify-content: center;
+  }
+}
+.post-header{display:flex;align-items:center;padding:5px 10px}
+.post-header .profile-picture img{width:29px;height:29px;border-radius:50%;object-fit:cover}
+.post-header .username{font-size:14px;margin-left:15px;margin-bottom:5px}
+
+.post-message{font-size:14px;margin-top:8px}
+
+.post-card img{width:100%;max-width:300px;max-height:280px;border-radius:10px;margin-bottom:10px;cursor:pointer}
+
+.comment .like-comment-btn,.comment .reply-btn,.comment .delete-comment-btn{background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:4px 8px;will-change:color}
+.comment button:hover{color:#fff}
+
+#sort-options{display:flex;justify-content:center;margin-bottom:20px;padding:0 8%;max-width:800px}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;z-index:11}
+
+.modal-content{background:#1a1a1a;padding:20px;width:280px;border-radius:14px 10px;color:#e0fefc;text-align:center;box-shadow:0 0 12px rgba(0,255,224,.2);border:1px solid #2e2e2e}
+
+.modal-actions{display:flex;gap:10px;margin-top:16px}
+.modal-actions button{flex:1;padding:6px 12px;font-size:13px;font-weight:600;border-radius:12px;border:2px solid transparent;cursor:pointer;will-change:background,color,box-shadow}
+
+.modal-cancel{color:#ff4d4f;background:#121212;border-color:#ff4d4f}
+.modal-cancel:hover{background:#a00;color:#fff;box-shadow:0 0 6px rgba(255,77,79,.4)}
+
+.modal-confirm{color:#00ffe0;background:#121212;border-color:#00ffe0}
+.modal-confirm:hover{background:linear-gradient(135deg,#00ffe0,#00bfff);color:#000;box-shadow:0 0 6px rgba(0,255,224,.4)}
